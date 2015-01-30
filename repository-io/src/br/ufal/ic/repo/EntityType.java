@@ -1,4 +1,4 @@
-package br.ufal.ic.repo.model;
+package br.ufal.ic.repo;
 
 /**
  *

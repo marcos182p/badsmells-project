@@ -1,5 +1,6 @@
-package br.ufal.ic.repo.model;
+package br.ufal.ic.repo;
 
+import br.ufal.ic.repo.histo.CodeChange;
 import java.util.Set;
 
 /**
