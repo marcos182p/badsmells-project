@@ -29,6 +29,8 @@ public class CodeChange {
     
     private String code;
     
+    public CodeChange() {}
+    
     public CodeChange(String snapshot, String date, boolean isBugFix, 
             boolean isPublic, EntityType entityType, ChangeType changeType,
             String code) {
