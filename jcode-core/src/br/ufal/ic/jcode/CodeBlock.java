@@ -1,30 +1,31 @@
 package br.ufal.ic.jcode;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
-public class CodeBlock {
-	
-	private List<CodeStatement> statements = new ArrayList<CodeStatement>();
+public class CodeBlock extends JavaEntity {
 
-	public CodeBlock() {
-	}
+    private List<CodeStatement> statements = new ArrayList<>();
 
-	public void addStatement (CodeStatement codeStatement){
-		statements.add(codeStatement);
-	}
-	
-	public List<CodeStatement> getStatements() {
-		return statements;
-	}
-	
-	public void setStatements(List<CodeStatement> codeStatements) {
-		this.statements = codeStatements;
-	}
+    public CodeBlock() {
+        super(EntityType.CODE_BLOCK);
+    }
 
-	@Override
-	public String toString() {
-		return "\n Body [statements=" + statements + "]";
-	}
+    public void addStatement(CodeStatement codeStatement) {
+        statements.add(codeStatement);
+    }
+
+    public List<CodeStatement> getStatements() {
+        return statements;
+    }
+
+    public void setStatements(List<CodeStatement> codeStatements) {
+        this.statements = codeStatements;
+    }
+
+    @Override
+    public String toString() {
+        return "\n Body [statements=" + statements + "]";
+    }
 
 }

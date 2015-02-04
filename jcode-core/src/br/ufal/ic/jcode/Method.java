@@ -3,64 +3,66 @@ package br.ufal.ic.jcode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Method extends AbstractDeclaration {
-	
-	private String returnType;
-	private List<ParameterMethod> parameters;
-	
-	private int linesCodes;
-	
-	private CodeBlock codeBlock;
-	
-	public Method() {
-		parameters = new ArrayList<ParameterMethod>();
-	}
-	
-	public String getRet() {
-		return returnType;
-	}
+public class Method extends JavaEntity {
 
-	public void setReturnType(String ret) {
-		this.returnType = ret;
-	}
+    private String returnType;
+    private List<ParameterMethod> parameters;
 
-	public void addParameter(ParameterMethod parameter){
-		parameters.add(parameter);
-	}
+    private Declaration declaration;
+    
+    private int linesCodes;
 
-	public List<ParameterMethod> getParameters() {
-		return parameters;
-	}
-	
-	public void setParameters(List<ParameterMethod> parameters) {
-		this.parameters = parameters;
-	}
-	
-	public CodeBlock getCodeBlock() {
-		return codeBlock;
-	}
+    private CodeBlock codeBlock;
 
-	public void setBody(CodeBlock codeBlock) {
-		this.codeBlock = codeBlock;
-	}
-	
-	public int getLinesCodes() {
-		return linesCodes;
-	}
+    public Method() {
+        super(EntityType.METHOD);
+        parameters = new ArrayList<>();
+    }
 
-	public void setLinesCodes(int linesCodes) {
-		this.linesCodes = linesCodes;
-	}
+    public String getRet() {
+        return returnType;
+    }
 
-	public int getNumberParameters() {
-		return parameters.size();
-	}
+    public void setReturnType(String ret) {
+        this.returnType = ret;
+    }
 
-	@Override
-	public String toString() {
-		return "\n Method [modifiers=" + getModifiers() + ", returnType=" + returnType + ", name="
-				+ getName() + ", parameters=" + parameters + ", numberRows=" + linesCodes + "]";
-	}
-	
-	
+    public void addParameter(ParameterMethod parameter) {
+        parameters.add(parameter);
+    }
+
+    public List<ParameterMethod> getParameters() {
+        return parameters;
+    }
+
+    public void setParameters(List<ParameterMethod> parameters) {
+        this.parameters = parameters;
+    }
+
+    public CodeBlock getCodeBlock() {
+        return codeBlock;
+    }
+
+    public void setBody(CodeBlock codeBlock) {
+        this.codeBlock = codeBlock;
+    }
+
+    public int getLinesCodes() {
+        return linesCodes;
+    }
+
+    public void setLinesCodes(int linesCodes) {
+        this.linesCodes = linesCodes;
+    }
+
+    public int getNumberParameters() {
+        return parameters.size();
+    }
+
+    @Override
+    public String toString() {
+        return "\n Method [modifiers=" + declaration.getModifiers() + ", returnType=" + returnType + ", name="
+                + declaration.getName() + ", parameters=" + parameters + ", numberRows=" + linesCodes + "]";
+    }
+
 }

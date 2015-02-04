@@ -1,6 +1,6 @@
 package br.ufal.ic.jcode.histo;
 
-import br.ufal.ic.jcode.repo.EntityType;
+import br.ufal.ic.jcode.EntityType;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,7 +12,7 @@ import java.util.Date;
  */
 public class CodeChange {
     
-    private static final DateFormat DATE_FORMAT = new SimpleDateFormat(null);
+    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z");
     // Snapshot;Date;BugFix;Entity;Public;Code;ChangeType
     
     private String snapshot;
@@ -32,6 +32,7 @@ public class CodeChange {
     public CodeChange(String snapshot, String date, boolean isBugFix, 
             boolean isPublic, EntityType entityType, ChangeType changeType,
             String code) {
+        
         this.snapshot = snapshot;
         try {
             this.date = DATE_FORMAT.parse(date);

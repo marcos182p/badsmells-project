@@ -1,7 +1,7 @@
 package br.ufal.ic.jcode;
 
 
-public class ParameterMethod extends AbstractDeclaration {
+public class ParameterMethod extends Declaration {
 	
 	private String type;
 	private String initializer;

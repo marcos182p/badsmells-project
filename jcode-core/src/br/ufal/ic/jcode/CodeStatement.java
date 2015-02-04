@@ -1,11 +1,12 @@
 package br.ufal.ic.jcode;
 
-public class CodeStatement {
+public class CodeStatement extends JavaEntity {
 	
 	private String type ;
 	private String statement = new String();
 
 	public CodeStatement() {
+            super(EntityType.STATEMENT);
 	}
 
 	public String getType() {

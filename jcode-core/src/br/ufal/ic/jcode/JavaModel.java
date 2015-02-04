@@ -5,24 +5,24 @@ import java.util.List;
 
 public class JavaModel {
 
-	private List<JavaProject> projects;
-	
-	public JavaModel() {
-		this.projects = new ArrayList<JavaProject>();
-	}
+    private final List<JavaProject> projects;
 
-	public void setProject(JavaProject project){
-		projects.clear();
-		projects.add(project);
-	}
+    public JavaModel() {
+        this.projects = new ArrayList<>();
+    }
 
-	public JavaProject getJavaProject() {
-		return !projects.isEmpty() ? projects.get(0) : null;
-	}
+    public void setProject(JavaProject project) {
+        projects.clear();
+        projects.add(project);
+    }
 
-	@Override
-	public String toString() {
-		return "Model [projects=" + projects + "]";
-	}
-	
+    public JavaProject getJavaProject() {
+        return !projects.isEmpty() ? projects.get(0) : null;
+    }
+
+    @Override
+    public String toString() {
+        return "Model [projects=" + projects + "]";
+    }
+
 }
