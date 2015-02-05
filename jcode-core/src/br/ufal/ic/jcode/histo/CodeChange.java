@@ -19,9 +19,9 @@ public class CodeChange {
     
     private Date date;
     
-    private boolean isBugFix;
+    private boolean bugFix;
     
-    private boolean isPublic;
+    private boolean publicDeclaration;
     
     private EntityType entityType;
     
@@ -36,13 +36,9 @@ public class CodeChange {
             String code) {
         
         this.snapshot = snapshot;
-        try {
-            this.date = DATE_FORMAT.parse(date);
-        } catch (ParseException ex) {
-            throw new RuntimeException(ex);
-        }
-        this.isBugFix = isBugFix;
-        this.isPublic = isPublic;
+        setDate(date);
+        this.bugFix = isBugFix;
+        this.publicDeclaration = isPublic;
         this.entityType = entityType;
         this.changeType = changeType;
         this.code = code;
@@ -64,21 +60,28 @@ public class CodeChange {
     public void setDate(Date date) {
         this.date = date;
     }
-
-    public boolean isIsBugFix() {
-        return isBugFix;
+    public void setDate(String date) {
+        try {
+            this.date = DATE_FORMAT.parse(date);
+        } catch (ParseException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
-    public void setIsBugFix(boolean isBugFix) {
-        this.isBugFix = isBugFix;
+    public boolean isBugFix() {
+        return bugFix;
     }
 
-    public boolean isIsPublic() {
-        return isPublic;
+    public void setBugFix(boolean isBugFix) {
+        this.bugFix = isBugFix;
     }
 
-    public void setIsPublic(boolean isPublic) {
-        this.isPublic = isPublic;
+    public boolean isPublic() {
+        return publicDeclaration;
+    }
+
+    public void setPublic(boolean publicDeclaration) {
+        this.publicDeclaration = publicDeclaration;
     }
 
     public EntityType getEntityType() {
